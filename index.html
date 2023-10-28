@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Full Screen Background with Text</title>
+    <meta charset="UTF-8"> <!-- Specifying UTF-8 encoding -->
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for full height, prevent scrolling, and default background color */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: black; /* Default background color */
+        }
+        .bg-image {
+            /* Background image URL, positioning, sizing, and centering */
+            background-image: url('snoringirl.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* Full height and width */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Lower z-index */
+        }
+        /* Overlay with linear gradient */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.7), /* Black with 70% opacity at top */
+                rgba(0, 0, 0, 0.3)  /* Black with 30% opacity at bottom */
+            );
+            z-index: 2; /* Higher z-index */
+        }
+        /* Styling for the centered text */
+        .centered-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Roboto Condensed', sans-serif;
+            color: white;
+            font-size: 12vw; /* Responsive font size */
+            white-space: nowrap; /* Prevent line breaks */
+            z-index: 3;
+        }
+        @media (max-width: 600px) {
+            .centered-text {
+                font-size: 12vw; /* Smaller font size for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-image"></div> <!-- Background Image -->
+    <div class="overlay"></div> <!-- Overlay layer -->
+    <div class="centered-text">snorinGirl.ΞTH</div> <!-- Centered Text -->
+</body>
+</html>
